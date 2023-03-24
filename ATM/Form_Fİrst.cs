@@ -21,6 +21,7 @@ namespace ATM
         {
             Form_With_Card formWithCard = new Form_With_Card();
             formWithCard.Show();
+            ///asas
         }
     }
 }
