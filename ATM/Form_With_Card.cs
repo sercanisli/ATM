@@ -16,5 +16,12 @@ namespace ATM
         {
             InitializeComponent();
         }
+
+        private void btn_WithCard_WithdrawMoney_Click(object sender, EventArgs e)
+        {
+            Form_WithdrawAndDepositMoney formWithdrawAndDepositMoney = new Form_WithdrawAndDepositMoney();
+            formWithdrawAndDepositMoney.Show();
+            this.Close();
+        }
     }
 }
