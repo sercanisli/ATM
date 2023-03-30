@@ -21,21 +21,27 @@ namespace Business.Concrete
         {
             Random randomCustomerwNo = new Random();
             int no = randomCustomerwNo.Next(10000,99999);
-            customer.CustomerNo = no.ToString();
+            customer.CustomerNo = no;
 
 
             _customerDal.Add(customer);
         }
 
-        public void AddMoney(AccountInformation accountInformation)
+        public void AddMoneyProcess(AccountInformation accountInformation)
         {
-            _customerDal.AddMoney(accountInformation);
+            _customerDal.AddMoneyProcess(accountInformation);
         }
 
-        public bool GetCustomer(string customerNo, string customerPassword)
+        public bool GetCustomer(int customerNo, string customerPassword)
         {
             var result=_customerDal.GetCustomer(customerNo, customerPassword);
             return result;
+        }
+
+        public Customer GetCustomerById(int customerNo)
+        {
+            return _customerDal.GetCustomerById(customerNo);
+            
         }
 
         public void SubtractMoney(Customer customer)

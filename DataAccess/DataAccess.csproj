@@ -54,13 +54,13 @@
     <Compile Include="Abstract\ICustomerDal.cs" />
     <Compile Include="Concrete\Context\MyBankContext.cs" />
     <Compile Include="Concrete\EntityFramework\EfCustomerDal.cs" />
-    <Compile Include="Migrations\202303291618237_Initiliaze.cs" />
-    <Compile Include="Migrations\202303291618237_Initiliaze.designer.cs">
-      <DependentUpon>202303291618237_Initiliaze.cs</DependentUpon>
+    <Compile Include="Migrations\202303302054429_Initialize.cs" />
+    <Compile Include="Migrations\202303302054429_Initialize.designer.cs">
+      <DependentUpon>202303302054429_Initialize.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202303292106160_Initialize2.cs" />
-    <Compile Include="Migrations\202303292106160_Initialize2.designer.cs">
-      <DependentUpon>202303292106160_Initialize2.cs</DependentUpon>
+    <Compile Include="Migrations\202303302141073_Mig.cs" />
+    <Compile Include="Migrations\202303302141073_Mig.designer.cs">
+      <DependentUpon>202303302141073_Mig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,11 +76,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202303291618237_Initiliaze.resx">
-      <DependentUpon>202303291618237_Initiliaze.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202303302054429_Initialize.resx">
+      <DependentUpon>202303302054429_Initialize.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202303292106160_Initialize2.resx">
-      <DependentUpon>202303292106160_Initialize2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202303302141073_Mig.resx">
+      <DependentUpon>202303302141073_Mig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

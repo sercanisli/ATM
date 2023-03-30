@@ -7,13 +7,13 @@ namespace DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class Initialize2 : IMigrationMetadata
+    public sealed partial class Mig : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Initialize2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Mig));
         
         string IMigrationMetadata.Id
         {
-            get { return "202303292106160_Initialize2"; }
+            get { return "202303302141073_Mig"; }
         }
         
         string IMigrationMetadata.Source

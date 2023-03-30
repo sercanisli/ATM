@@ -12,14 +12,12 @@ namespace Entities.Concrete
     {
         public decimal Money { get; set; }
         public int CustomerId { get; set; }
-
+        public int CustomerNo { get; set; }
 
 
 
 
         [ForeignKey("CustomerId")]
         public virtual Customer Customer { get; set; }
-
-
     }
 }

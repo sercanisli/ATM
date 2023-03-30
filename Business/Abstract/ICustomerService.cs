@@ -11,9 +11,9 @@ namespace Business.Abstract
     {
         void Add(Customer customer);
         void Update(Customer customer);
-        bool GetCustomer(string customerNo, string customerPassword);
-        void AddMoney(AccountInformation accountInformation);
+        bool GetCustomer(int customerNo, string customerPassword);
         void SubtractMoney(Customer customer);
-
+        void AddMoneyProcess(AccountInformation accountInformation);
+        Customer GetCustomerById(int customerNo);
     }
 }

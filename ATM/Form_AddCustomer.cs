@@ -43,8 +43,8 @@ namespace ATM
                     PhoneNo = tbx_PhoneNo.Text,
                     Email = tbx_Email.Text,
                     Password = tbx_Password.Text,
-                    //Gender = (Gender)cbx_Gender.SelectedIndex,
-                    BirthDay = DateTime.Now,
+                    Gender = (Gender)cbx_Gender.SelectedIndex,
+                    BirthDay = dtp_DateOfBirth.Value,
                     CreatedDate = DateTime.Now
                 });
                 MessageBox.Show("Succesful");

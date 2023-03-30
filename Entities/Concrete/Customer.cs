@@ -12,7 +12,7 @@ namespace Entities.Concrete
     {
         public string Email { get; set; }
         public string Password { get; set; }
-        public string CustomerNo { get; set; }
+        public int CustomerNo { get; set; }
         public DateTime BirthDay { get; set; }
         public Gender Gender { get; set; }
 

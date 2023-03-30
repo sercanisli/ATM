@@ -21,5 +21,9 @@ namespace DataAccess.Concrete.Context
         public DbSet<Customer> Customers { get; set; }
         public DbSet<NonCustomer> NonCustomers { get; set; }
 
+        internal object Set<T1, T2>()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

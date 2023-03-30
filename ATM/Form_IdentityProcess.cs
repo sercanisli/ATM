@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Abstract;
 using Business.DependencyResolvers.Ninject;
+using Entities.Abstract;
 using Entities.Concrete;
 
 namespace ATM
@@ -22,21 +23,27 @@ namespace ATM
             _customerService = InstanceFactory.GetInstance<ICustomerService>();
         }
 
+        private AccountInformation accountInformation = new AccountInformation();
+
+
         private void btn_GoWithCards_Click(object sender, EventArgs e)
         {
-            var result=_customerService.GetCustomer(tbx_CustomerNo.Text, tbx_CustomerPassword.Text);
+            User.UserNo = Convert.ToInt32(tbx_CustomerNo.Text);
+            var result =_customerService.GetCustomer(User.UserNo, tbx_CustomerPassword.Text);
+            var customer=_customerService.GetCustomerById(User.UserNo);
             if (result==true)
             {
                 this.Close();
                 Form_With_Card formWithCard = new Form_With_Card();
                 formWithCard.Show();
+                User.UserId = customer.Id;
             }
             else
             {
                 MessageBox.Show("Customer Number or Customer Password is incorrect");
             }
 
-            
+
         }
     }
 }

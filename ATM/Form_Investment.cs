@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Abstract;
 using Business.DependencyResolvers.Ninject;
+using Entities.Abstract;
 using Entities.Concrete;
 
 namespace ATM
@@ -25,11 +26,13 @@ namespace ATM
 
         private void btn_Investment_Click(object sender, EventArgs e)
         {
-            _customerService.AddMoney(new AccountInformation
-            {
-                Money =  Convert.ToDecimal(nmUD_Amount.Text)
-            });
-            MessageBox.Show("Succesful");
+          _customerService.AddMoneyProcess(new AccountInformation
+          {
+              Money = Convert.ToDecimal(nmUD_Amount.Text),
+              CustomerNo = User.UserNo,
+              CreatedDate = DateTime.Now,
+              CustomerId = User.UserId
+          });
         }
     }
 }

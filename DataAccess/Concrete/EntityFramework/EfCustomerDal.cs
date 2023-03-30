@@ -21,7 +21,7 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public void AddMoney(AccountInformation accountInformation)
+        public void AddMoneyProcess(AccountInformation accountInformation)
         {
             using (MyBankContext myBankContext = new MyBankContext())
             {
@@ -30,12 +30,22 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public bool GetCustomer(string customerNo, string customerPassword)
+        public bool GetCustomer(int customerNo, string customerPassword)
         {
             using (MyBankContext myBankContext = new MyBankContext())
             {
                 var result = myBankContext.Set<Customer>()
                     .Any(c => c.CustomerNo == customerNo && c.Password == customerPassword);
+                return result;
+            }
+        }
+
+        public Customer GetCustomerById(int customerNo)
+        {
+            using (MyBankContext myBankContext = new MyBankContext())
+            {
+                var result = myBankContext.Customers.Where(c => c.CustomerNo == customerNo).FirstOrDefault();
+
                 return result;
             }
         }

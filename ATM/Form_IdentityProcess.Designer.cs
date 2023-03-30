@@ -57,7 +57,7 @@ namespace ATM
             // 
             // tbx_CustomerNo
             // 
-            this.tbx_CustomerNo.Location = new System.Drawing.Point(122, 12);
+            this.tbx_CustomerNo.Location = new System.Drawing.Point(122, 16);
             this.tbx_CustomerNo.Name = "tbx_CustomerNo";
             this.tbx_CustomerNo.Size = new System.Drawing.Size(138, 20);
             this.tbx_CustomerNo.TabIndex = 2;
@@ -82,7 +82,7 @@ namespace ATM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 139);
+            this.ClientSize = new System.Drawing.Size(264, 132);
             this.Controls.Add(this.tbx_CustomerPassword);
             this.Controls.Add(this.lbl_CustomerPassword);
             this.Controls.Add(this.tbx_CustomerNo);

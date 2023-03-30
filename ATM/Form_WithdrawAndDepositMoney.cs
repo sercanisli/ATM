@@ -21,12 +21,14 @@ namespace ATM
         {
             Form_WithdrawMoney formWithdrawMoney = new Form_WithdrawMoney();
             formWithdrawMoney.Show();
+            this.Close();
         }
 
         private void btn_Investment_Click(object sender, EventArgs e)
         {
             Form_Investment formInvestment = new Form_Investment();
             formInvestment.Show();
+            this.Close();
         }
     }
 }
