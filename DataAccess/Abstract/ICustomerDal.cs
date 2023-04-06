@@ -10,11 +10,19 @@ namespace DataAccess.Abstract
     public interface ICustomerDal
     {
         void Add(Customer customer);
-        void Update(Customer customer);
         bool GetCustomer(int customerNo, string customerPassword);
         void AddMoneyProcess(AccountInformation accountInformation);
-        void SubtractMoney(Customer customer);
         Customer GetCustomerById(int customerNo);
+        void UpdateMoneyProcess(AccountInformation accountInformation, int customerId);
+        bool IsExistsForMoneyProcess(int customerId);
+        AccountInformation GetMoneyById(int id);
+        void DrawMoney(AccountInformation accountInformation, int id);
+        void TransferMoney(AccountInformation accountInformation, int CustomerNo, int id);
+
+
+
+
+
 
     }
 }

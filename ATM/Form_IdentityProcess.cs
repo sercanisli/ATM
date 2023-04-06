@@ -31,6 +31,7 @@ namespace ATM
             User.UserNo = Convert.ToInt32(tbx_CustomerNo.Text);
             var result =_customerService.GetCustomer(User.UserNo, tbx_CustomerPassword.Text);
             var customer=_customerService.GetCustomerById(User.UserNo);
+
             if (result==true)
             {
                 this.Close();

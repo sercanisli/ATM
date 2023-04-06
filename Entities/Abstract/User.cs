@@ -13,5 +13,6 @@ namespace Entities.Abstract
         public static string Name { get; set; }
         public static string Surname { get; set; }
         public static DateTime CreatedDate { get; set; }
+        public static decimal Money { get; set; }
     }
 }

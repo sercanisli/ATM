@@ -23,16 +23,45 @@ namespace ATM
 
             _customerService = InstanceFactory.GetInstance<ICustomerService>();
         }
-
+        private void LoadMoney()
+        {
+            var money = _customerService.GetMoneyById(User.UserId);
+            lbl_Money.Text = money.Money.ToString();
+        }
         private void btn_Investment_Click(object sender, EventArgs e)
         {
-          _customerService.AddMoneyProcess(new AccountInformation
-          {
-              Money = Convert.ToDecimal(nmUD_Amount.Text),
-              CustomerNo = User.UserNo,
-              CreatedDate = DateTime.Now,
-              CustomerId = User.UserId
-          });
+            var isExistsForMoneyProcess = _customerService.IsExistsForMoneyProcess(User.UserId);
+            if (isExistsForMoneyProcess==true)
+            {
+                _customerService.UpdateMoneyProcess(new AccountInformation
+                { 
+                    Money = Convert.ToDecimal(nmUD_Amount.Text)
+                }, User.UserId);
+                MessageBox.Show("Your account updated");
+            }
+            else
+            { 
+                _customerService.AddMoneyProcess(new AccountInformation
+                {
+                    Money = Convert.ToDecimal(nmUD_Amount.Text),
+                    CustomerNo = User.UserNo,
+                    CreatedDate = DateTime.Now.ToShortDateString(),
+                    CustomerId = User.UserId
+                });
+            }
+            LoadMoney();
+        }
+
+        private void Form_Investment_Load(object sender, EventArgs e)
+        {
+            LoadMoney();
+        }
+
+        private void btn_Back_Click(object sender, EventArgs e)
+        {
+            Form_WithdrawAndDepositMoney withdrawAndDepositMoney = new Form_WithdrawAndDepositMoney();
+            withdrawAndDepositMoney.Show();
+            this.Close();
         }
     }
 }

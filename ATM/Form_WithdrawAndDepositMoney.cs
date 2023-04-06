@@ -30,5 +30,12 @@ namespace ATM
             formInvestment.Show();
             this.Close();
         }
+
+        private void btn_Back_Click(object sender, EventArgs e)
+        {
+            Form_With_Card withCard = new Form_With_Card();
+            withCard.Show();
+            this.Close();
+        }
     }
 }

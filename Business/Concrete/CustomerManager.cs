@@ -32,6 +32,11 @@ namespace Business.Concrete
             _customerDal.AddMoneyProcess(accountInformation);
         }
 
+        public void DrawMoney(AccountInformation accountInformation, int id)
+        {
+            _customerDal.DrawMoney(accountInformation, id);
+        }
+
         public bool GetCustomer(int customerNo, string customerPassword)
         {
             var result=_customerDal.GetCustomer(customerNo, customerPassword);
@@ -44,14 +49,23 @@ namespace Business.Concrete
             
         }
 
-        public void SubtractMoney(Customer customer)
+        public AccountInformation GetMoneyById(int id)
         {
-           _customerDal.SubtractMoney(customer);
+            return _customerDal.GetMoneyById(id);
         }
 
-        public void Update(Customer customer)
+        public bool IsExistsForMoneyProcess(int customerId)
         {
-            throw new NotImplementedException();
+            return _customerDal.IsExistsForMoneyProcess(customerId);
+        }
+
+        public void TransferMoney(AccountInformation accountInformation, int CustomerNo, int id)
+        {
+            _customerDal.TransferMoney(accountInformation, CustomerNo, id);
+        }
+        public void UpdateMoneyProcess(AccountInformation accountInformation, int customerId)
+        {
+            _customerDal.UpdateMoneyProcess(accountInformation,customerId);
         }
     }
 }

@@ -23,5 +23,26 @@ namespace ATM
             formWithdrawAndDepositMoney.Show();
             this.Close();
         }
+
+        private void btn_BalanceInformaion_Click(object sender, EventArgs e)
+        {
+            Form_BalanceInformation formBalanceInformation = new Form_BalanceInformation();
+            formBalanceInformation.Show();
+            this.Close();
+        }
+
+        private void btn_WithCard_MoneyTransfers_Click(object sender, EventArgs e)
+        {
+            Form_MoneyTransfer form_MoneyTransfer = new Form_MoneyTransfer();
+            form_MoneyTransfer.Show();
+            this.Close();
+        }
+
+        private void btn_PaymentTransaction_Click(object sender, EventArgs e)
+        {
+            Form_PaymentTransaction form_PaymentTransaction = new Form_PaymentTransaction();
+            form_PaymentTransaction.Show();
+            this.Close();
+        }
     }
 }

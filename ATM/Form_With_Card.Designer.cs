@@ -55,6 +55,7 @@ namespace ATM
             this.btn_WithCard_MoneyTransfers.TabIndex = 1;
             this.btn_WithCard_MoneyTransfers.Text = "Money Transfers";
             this.btn_WithCard_MoneyTransfers.UseVisualStyleBackColor = true;
+            this.btn_WithCard_MoneyTransfers.Click += new System.EventHandler(this.btn_WithCard_MoneyTransfers_Click);
             // 
             // btn_WithCard_ApplicationProcedures
             // 
@@ -73,6 +74,7 @@ namespace ATM
             this.btn_BalanceInformaion.TabIndex = 3;
             this.btn_BalanceInformaion.Text = "Balance Information";
             this.btn_BalanceInformaion.UseVisualStyleBackColor = true;
+            this.btn_BalanceInformaion.Click += new System.EventHandler(this.btn_BalanceInformaion_Click);
             // 
             // btn_WithCard_CreditCardDebtPayment
             // 
@@ -91,6 +93,7 @@ namespace ATM
             this.btn_PaymentTransaction.TabIndex = 5;
             this.btn_PaymentTransaction.Text = "Payment Transaction";
             this.btn_PaymentTransaction.UseVisualStyleBackColor = true;
+            this.btn_PaymentTransaction.Click += new System.EventHandler(this.btn_PaymentTransaction_Click);
             // 
             // Form_With_Card
             // 

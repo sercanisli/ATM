@@ -10,10 +10,14 @@ namespace Business.Abstract
     public interface ICustomerService
     {
         void Add(Customer customer);
-        void Update(Customer customer);
         bool GetCustomer(int customerNo, string customerPassword);
-        void SubtractMoney(Customer customer);
         void AddMoneyProcess(AccountInformation accountInformation);
         Customer GetCustomerById(int customerNo);
+        void UpdateMoneyProcess(AccountInformation accountInformation, int customerId);
+        bool IsExistsForMoneyProcess(int customerId);
+        AccountInformation GetMoneyById(int id);
+        void DrawMoney(AccountInformation accountInformation, int id);
+        void TransferMoney(AccountInformation accountInformation, int CustomerNo, int id);
+
     }
 }

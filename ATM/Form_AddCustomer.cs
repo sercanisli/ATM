@@ -45,7 +45,7 @@ namespace ATM
                     Password = tbx_Password.Text,
                     Gender = (Gender)cbx_Gender.SelectedIndex,
                     BirthDay = dtp_DateOfBirth.Value,
-                    CreatedDate = DateTime.Now
+                    CreatedDate = DateTime.Now.ToShortDateString()
                 });
                 MessageBox.Show("Succesful");
             }

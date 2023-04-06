@@ -34,13 +34,14 @@ namespace ATM
             this.lbl_Amount = new System.Windows.Forms.Label();
             this.nmUD_Amount = new System.Windows.Forms.NumericUpDown();
             this.btn_Investment = new System.Windows.Forms.Button();
+            this.btn_Back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nmUD_Amount)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_MoneyInAccount
             // 
             this.lbl_MoneyInAccount.AutoSize = true;
-            this.lbl_MoneyInAccount.Location = new System.Drawing.Point(12, 53);
+            this.lbl_MoneyInAccount.Location = new System.Drawing.Point(12, 24);
             this.lbl_MoneyInAccount.Name = "lbl_MoneyInAccount";
             this.lbl_MoneyInAccount.Size = new System.Drawing.Size(99, 13);
             this.lbl_MoneyInAccount.TabIndex = 1;
@@ -49,7 +50,7 @@ namespace ATM
             // lbl_Money
             // 
             this.lbl_Money.AutoSize = true;
-            this.lbl_Money.Location = new System.Drawing.Point(209, 53);
+            this.lbl_Money.Location = new System.Drawing.Point(209, 24);
             this.lbl_Money.Name = "lbl_Money";
             this.lbl_Money.Size = new System.Drawing.Size(10, 13);
             this.lbl_Money.TabIndex = 2;
@@ -58,7 +59,7 @@ namespace ATM
             // lbl_Amount
             // 
             this.lbl_Amount.AutoSize = true;
-            this.lbl_Amount.Location = new System.Drawing.Point(62, 111);
+            this.lbl_Amount.Location = new System.Drawing.Point(62, 62);
             this.lbl_Amount.Name = "lbl_Amount";
             this.lbl_Amount.Size = new System.Drawing.Size(49, 13);
             this.lbl_Amount.TabIndex = 3;
@@ -66,7 +67,7 @@ namespace ATM
             // 
             // nmUD_Amount
             // 
-            this.nmUD_Amount.Location = new System.Drawing.Point(201, 109);
+            this.nmUD_Amount.Location = new System.Drawing.Point(201, 60);
             this.nmUD_Amount.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -78,7 +79,7 @@ namespace ATM
             // 
             // btn_Investment
             // 
-            this.btn_Investment.Location = new System.Drawing.Point(224, 146);
+            this.btn_Investment.Location = new System.Drawing.Point(224, 110);
             this.btn_Investment.Name = "btn_Investment";
             this.btn_Investment.Size = new System.Drawing.Size(97, 40);
             this.btn_Investment.TabIndex = 5;
@@ -86,11 +87,22 @@ namespace ATM
             this.btn_Investment.UseVisualStyleBackColor = true;
             this.btn_Investment.Click += new System.EventHandler(this.btn_Investment_Click);
             // 
+            // btn_Back
+            // 
+            this.btn_Back.Location = new System.Drawing.Point(15, 108);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(97, 40);
+            this.btn_Back.TabIndex = 6;
+            this.btn_Back.Text = "Back";
+            this.btn_Back.UseVisualStyleBackColor = true;
+            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
+            // 
             // Form_Investment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 198);
+            this.ClientSize = new System.Drawing.Size(333, 160);
+            this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.btn_Investment);
             this.Controls.Add(this.nmUD_Amount);
             this.Controls.Add(this.lbl_Amount);
@@ -98,6 +110,7 @@ namespace ATM
             this.Controls.Add(this.lbl_MoneyInAccount);
             this.Name = "Form_Investment";
             this.Text = "Form_Investment";
+            this.Load += new System.EventHandler(this.Form_Investment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nmUD_Amount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -111,5 +124,6 @@ namespace ATM
         private System.Windows.Forms.Label lbl_Amount;
         private System.Windows.Forms.NumericUpDown nmUD_Amount;
         private System.Windows.Forms.Button btn_Investment;
+        private System.Windows.Forms.Button btn_Back;
     }
 }

@@ -34,6 +34,7 @@ namespace ATM
             this.lbl_Amount = new System.Windows.Forms.Label();
             this.nmUD_Amount = new System.Windows.Forms.NumericUpDown();
             this.btn_Draw = new System.Windows.Forms.Button();
+            this.btn_Back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nmUD_Amount)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,12 +80,24 @@ namespace ATM
             this.btn_Draw.TabIndex = 4;
             this.btn_Draw.Text = "DRAW";
             this.btn_Draw.UseVisualStyleBackColor = true;
+            this.btn_Draw.Click += new System.EventHandler(this.btn_Draw_Click);
+            // 
+            // btn_Back
+            // 
+            this.btn_Back.Location = new System.Drawing.Point(12, 150);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(97, 40);
+            this.btn_Back.TabIndex = 5;
+            this.btn_Back.Text = "Back";
+            this.btn_Back.UseVisualStyleBackColor = true;
+            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
             // Form_WithdrawMoney
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(332, 198);
+            this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.btn_Draw);
             this.Controls.Add(this.nmUD_Amount);
             this.Controls.Add(this.lbl_Amount);
@@ -92,6 +105,7 @@ namespace ATM
             this.Controls.Add(this.lbl_MoneyInAccount);
             this.Name = "Form_WithdrawMoney";
             this.Text = "Form_WithdrawMoney";
+            this.Load += new System.EventHandler(this.Form_WithdrawMoney_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nmUD_Amount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -105,5 +119,6 @@ namespace ATM
         private System.Windows.Forms.Label lbl_Amount;
         private System.Windows.Forms.NumericUpDown nmUD_Amount;
         private System.Windows.Forms.Button btn_Draw;
+        private System.Windows.Forms.Button btn_Back;
     }
 }

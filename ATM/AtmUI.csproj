@@ -62,6 +62,18 @@
     <Compile Include="Form_AddCustomer.Designer.cs">
       <DependentUpon>Form_AddCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_BalanceInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_BalanceInformation.Designer.cs">
+      <DependentUpon>Form_BalanceInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Bills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Bills.Designer.cs">
+      <DependentUpon>Form_Bills.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Fİrst.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +91,30 @@
     </Compile>
     <Compile Include="Form_Investment.Designer.cs">
       <DependentUpon>Form_Investment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_MoneyTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_MoneyTransfer.Designer.cs">
+      <DependentUpon>Form_MoneyTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_MoneyTransferOurCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_MoneyTransferOurCustomer.Designer.cs">
+      <DependentUpon>Form_MoneyTransferOurCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_NotOurCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_NotOurCustomer.Designer.cs">
+      <DependentUpon>Form_NotOurCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_PaymentTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_PaymentTransaction.Designer.cs">
+      <DependentUpon>Form_PaymentTransaction.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_WithdrawAndDepositMoney.cs">
       <SubType>Form</SubType>
@@ -109,6 +145,12 @@
     <EmbeddedResource Include="Form_AddCustomer.resx">
       <DependentUpon>Form_AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_BalanceInformation.resx">
+      <DependentUpon>Form_BalanceInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Bills.resx">
+      <DependentUpon>Form_Bills.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Fİrst.resx">
       <DependentUpon>Form_Fİrst.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +159,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Investment.resx">
       <DependentUpon>Form_Investment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_MoneyTransfer.resx">
+      <DependentUpon>Form_MoneyTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_MoneyTransferOurCustomer.resx">
+      <DependentUpon>Form_MoneyTransferOurCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_NotOurCustomer.resx">
+      <DependentUpon>Form_NotOurCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_PaymentTransaction.resx">
+      <DependentUpon>Form_PaymentTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_WithdrawAndDepositMoney.resx">
       <DependentUpon>Form_WithdrawAndDepositMoney.cs</DependentUpon>

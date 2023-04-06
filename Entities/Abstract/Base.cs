@@ -9,7 +9,7 @@ namespace Entities.Abstract
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public T Id { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public string CreatedDate { get; set; }
         public bool IsDeleted { get; set; }
     }
 }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Abstract;
 using DataAccess.Concrete.Context;
+using Entities.Abstract;
 using Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework
@@ -30,6 +31,18 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
+        public void DrawMoney(AccountInformation accountInformation, int id)
+        {
+            using (MyBankContext myBankContext = new MyBankContext())
+            {
+
+                var result = myBankContext.AccountInformations.Where(a => a.CustomerId == id).First();
+                result.Money =result.Money-accountInformation.Money;
+                myBankContext.Entry(result).State = EntityState.Modified;
+                myBankContext.SaveChanges();
+            }
+        }
+
         public bool GetCustomer(int customerNo, string customerPassword)
         {
             using (MyBankContext myBankContext = new MyBankContext())
@@ -50,14 +63,48 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public void SubtractMoney(Customer customer)
+        public AccountInformation GetMoneyById(int id)
         {
-            throw new NotImplementedException();
+            using(MyBankContext myBankContext = new MyBankContext())
+            {
+                var result = myBankContext.AccountInformations.Where(a => a.CustomerId == id).FirstOrDefault();
+                return result;
+            }
+            
         }
 
-        public void Update(Customer customer)
+        public bool IsExistsForMoneyProcess(int customerId)
         {
-            throw new NotImplementedException();
+            using (MyBankContext myBankContext = new MyBankContext())
+            {
+                var result = myBankContext.Set<AccountInformation>().Any(a => a.CustomerId == customerId);
+                return result;
+            }
+        }
+
+        public void TransferMoney(AccountInformation accountInformation, int CustomerNo, int id)
+        {
+            using (MyBankContext myBankContext = new MyBankContext())
+            {
+                var result = myBankContext.AccountInformations.Where(a => a.CustomerNo == CustomerNo).FirstOrDefault();
+                var user = myBankContext.AccountInformations.Where(a => a.CustomerId == id).FirstOrDefault();
+                result.Money = result.Money + accountInformation.Money;
+                user.Money = user.Money - accountInformation.Money;
+                myBankContext.Entry(result).State = EntityState.Modified;
+                myBankContext.SaveChanges();
+            }
+        }
+
+        public void UpdateMoneyProcess(AccountInformation accountInformation, int customerId)
+        {
+            using (MyBankContext myBankContext = new MyBankContext())
+            {
+                
+                var result = myBankContext.AccountInformations.Where(a=>a.CustomerId == customerId).First();
+                result.Money = accountInformation.Money + result.Money;
+                myBankContext.Entry(result).State = EntityState.Modified;
+                myBankContext.SaveChanges();
+            }
         }
     }
 }

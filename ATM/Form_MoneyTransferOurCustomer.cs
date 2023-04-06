@@ -14,15 +14,13 @@ using System.Windows.Forms;
 
 namespace ATM
 {
-    public partial class Form_WithdrawMoney : Form
+    public partial class Form_MoneyTransferOurCustomer : Form
     {
         private ICustomerService _customerService;
-
-        public Form_WithdrawMoney()
+        public Form_MoneyTransferOurCustomer()
         {
             InitializeComponent();
             _customerService = InstanceFactory.GetInstance<ICustomerService>();
-
         }
         private void LoadMoney()
         {
@@ -30,26 +28,27 @@ namespace ATM
             lbl_Money.Text = money.Money.ToString();
         }
 
-        private void btn_Draw_Click(object sender, EventArgs e)
+        private void btn_Transfer_Click(object sender, EventArgs e)
         {
-            _customerService.DrawMoney(new AccountInformation
+            _customerService.TransferMoney(new AccountInformation
             {
-                Money = Convert.ToDecimal(nmUD_Amount.Text)
-            }, User.UserId);
-
-            LoadMoney();
-        }
-
-        private void Form_WithdrawMoney_Load(object sender, EventArgs e)
-        {
+                Money=nmUD_Money.Value,
+                CustomerId=User.UserId
+            }, Convert.ToInt32(tbx_CustomerNo.Text), User.UserId);
+            MessageBox.Show("Transfer is done");
             LoadMoney();
         }
 
         private void btn_Back_Click(object sender, EventArgs e)
         {
-            Form_WithdrawAndDepositMoney withdrawAndDepositMoney = new Form_WithdrawAndDepositMoney();
-            withdrawAndDepositMoney.Show();
+            Form_MoneyTransfer moneyTransfer = new Form_MoneyTransfer();
+            moneyTransfer.Show();
             this.Close();
+        }
+
+        private void Form_MoneyTransferOurCustomer_Load(object sender, EventArgs e)
+        {
+            LoadMoney();
         }
     }
 }
