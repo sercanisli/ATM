@@ -15,6 +15,8 @@ namespace ATM
 {
     public partial class Form_AddCustomer : Form
     {
+        private ICustomerService _customerService;
+
         public Form_AddCustomer()
         {
             InitializeComponent();
@@ -29,7 +31,6 @@ namespace ATM
             cbx_Gender.Items.AddRange(gender);
         }
 
-        private ICustomerService _customerService;
         private void btn_Add_Click(object sender, EventArgs e)
         {
 

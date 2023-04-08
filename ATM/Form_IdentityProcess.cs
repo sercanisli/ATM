@@ -38,6 +38,7 @@ namespace ATM
                 Form_With_Card formWithCard = new Form_With_Card();
                 formWithCard.Show();
                 User.UserId = customer.Id;
+                User.Name = customer.Name;
             }
             else
             {

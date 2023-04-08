@@ -18,6 +18,5 @@ namespace Business.Abstract
         AccountInformation GetMoneyById(int id);
         void DrawMoney(AccountInformation accountInformation, int id);
         void TransferMoney(AccountInformation accountInformation, int CustomerNo, int id);
-
     }
 }

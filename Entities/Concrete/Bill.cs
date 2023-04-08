@@ -1,25 +1,14 @@
-﻿using System;
+﻿using Entities.Abstract;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entities.Abstract;
 
 namespace Entities.Concrete
 {
-    public class Bill : Base<int>
+    public class Bill : Base<byte>
     {
-        public int CustomerId { get; set; }
-        public byte BillId { get; set; }
-
-
-        [ForeignKey("BillId")]
-        public virtual BillType BillType { get; set; }
-
-
-
-        [ForeignKey("CustomerId")]
-        public virtual Customer Customer { get; set; }
+        public string Name { get; set; }
     }
 }

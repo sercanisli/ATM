@@ -51,8 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IBillDal.cs" />
     <Compile Include="Abstract\ICustomerDal.cs" />
     <Compile Include="Concrete\Context\MyBankContext.cs" />
+    <Compile Include="Concrete\EntityFramework\EfBillDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCustomerDal.cs" />
     <Compile Include="Migrations\202303302054429_Initialize.cs" />
     <Compile Include="Migrations\202303302054429_Initialize.designer.cs">
@@ -65,6 +67,14 @@
     <Compile Include="Migrations\202303310926017_DatetimeProcess.cs" />
     <Compile Include="Migrations\202303310926017_DatetimeProcess.designer.cs">
       <DependentUpon>202303310926017_DatetimeProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304071550136_BillProcess.cs" />
+    <Compile Include="Migrations\202304071550136_BillProcess.designer.cs">
+      <DependentUpon>202304071550136_BillProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304081438050_BillProcess2.cs" />
+    <Compile Include="Migrations\202304081438050_BillProcess2.designer.cs">
+      <DependentUpon>202304081438050_BillProcess2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +98,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303310926017_DatetimeProcess.resx">
       <DependentUpon>202303310926017_DatetimeProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304071550136_BillProcess.resx">
+      <DependentUpon>202304071550136_BillProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304081438050_BillProcess2.resx">
+      <DependentUpon>202304081438050_BillProcess2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

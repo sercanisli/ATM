@@ -80,14 +80,14 @@ namespace ATM
             // 
             // tbx_CustomerNo
             // 
-            this.tbx_CustomerNo.Location = new System.Drawing.Point(165, 46);
+            this.tbx_CustomerNo.Location = new System.Drawing.Point(165, 50);
             this.tbx_CustomerNo.Name = "tbx_CustomerNo";
             this.tbx_CustomerNo.Size = new System.Drawing.Size(120, 20);
             this.tbx_CustomerNo.TabIndex = 5;
             // 
             // nmUD_Money
             // 
-            this.nmUD_Money.Location = new System.Drawing.Point(165, 84);
+            this.nmUD_Money.Location = new System.Drawing.Point(165, 89);
             this.nmUD_Money.Name = "nmUD_Money";
             this.nmUD_Money.Size = new System.Drawing.Size(120, 20);
             this.nmUD_Money.TabIndex = 7;
@@ -114,7 +114,7 @@ namespace ATM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 181);
+            this.ClientSize = new System.Drawing.Size(309, 176);
             this.Controls.Add(this.lbl_Money);
             this.Controls.Add(this.lbl_MoneyInAccount);
             this.Controls.Add(this.nmUD_Money);

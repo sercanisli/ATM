@@ -17,7 +17,7 @@ namespace DataAccess.Concrete.Context
         }
         public DbSet<Bill> Bills { get; set; }
         public DbSet<AccountInformation> AccountInformations { get; set; }
-        public DbSet<BillType> BillTypes { get; set; }
+        public DbSet<PayBill> PayBills { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<NonCustomer> NonCustomers { get; set; }
 

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entities.Abstract;
 
-namespace Entities.Concrete
+namespace Entities.Abstract
 {
-    public class BillType:Base<byte>
+    public static class BillStatic
     {
-        public string Name { get; set; }
+        public static byte BillsId { get; set; }
     }
 }

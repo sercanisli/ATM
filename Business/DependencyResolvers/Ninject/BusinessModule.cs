@@ -18,6 +18,9 @@ namespace Business.DependencyResolvers.Ninject
         {
             Bind<ICustomerDal>().To<EfCustomerDal>().InSingletonScope();
             Bind<ICustomerService>().To<CustomerManager>().InSingletonScope();
+
+            Bind<IBillDal>().To<EfBillDal>().InSingletonScope();
+            Bind<IBillService>().To<BillManager>().InSingletonScope();
         }
     }
 }

@@ -44,7 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IBillService.cs" />
     <Compile Include="Abstract\ICustomerService.cs" />
+    <Compile Include="Concrete\BillManager.cs" />
     <Compile Include="Concrete\CustomerManager.cs" />
     <Compile Include="DependencyResolvers\Ninject\BusinessModule.cs" />
     <Compile Include="DependencyResolvers\Ninject\InstanceFactory.cs" />

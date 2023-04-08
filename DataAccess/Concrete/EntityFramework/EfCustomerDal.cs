@@ -58,7 +58,6 @@ namespace DataAccess.Concrete.EntityFramework
             using (MyBankContext myBankContext = new MyBankContext())
             {
                 var result = myBankContext.Customers.Where(c => c.CustomerNo == customerNo).FirstOrDefault();
-
                 return result;
             }
         }
@@ -70,7 +69,6 @@ namespace DataAccess.Concrete.EntityFramework
                 var result = myBankContext.AccountInformations.Where(a => a.CustomerId == id).FirstOrDefault();
                 return result;
             }
-            
         }
 
         public bool IsExistsForMoneyProcess(int customerId)
@@ -88,8 +86,10 @@ namespace DataAccess.Concrete.EntityFramework
             {
                 var result = myBankContext.AccountInformations.Where(a => a.CustomerNo == CustomerNo).FirstOrDefault();
                 var user = myBankContext.AccountInformations.Where(a => a.CustomerId == id).FirstOrDefault();
+
                 result.Money = result.Money + accountInformation.Money;
                 user.Money = user.Money - accountInformation.Money;
+
                 myBankContext.Entry(result).State = EntityState.Modified;
                 myBankContext.SaveChanges();
             }
@@ -99,7 +99,6 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (MyBankContext myBankContext = new MyBankContext())
             {
-                
                 var result = myBankContext.AccountInformations.Where(a=>a.CustomerId == customerId).First();
                 result.Money = accountInformation.Money + result.Money;
                 myBankContext.Entry(result).State = EntityState.Modified;

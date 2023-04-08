@@ -32,10 +32,9 @@ namespace ATM
         {
             _customerService.TransferMoney(new AccountInformation
             {
-                Money=nmUD_Money.Value,
-                CustomerId=User.UserId
+                Money=nmUD_Money.Value
             }, Convert.ToInt32(tbx_CustomerNo.Text), User.UserId);
-            MessageBox.Show("Transfer is done");
+            MessageBox.Show($"{User.Name} Transfer is done");
             LoadMoney();
         }
 
