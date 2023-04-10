@@ -13,13 +13,16 @@ namespace DataAccess.Concrete.Context
     {
         public MyBankContext():base("name=mycon")
         {
-            
+
         }
         public DbSet<Bill> Bills { get; set; }
         public DbSet<AccountInformation> AccountInformations { get; set; }
         public DbSet<PayBill> PayBills { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<NonCustomer> NonCustomers { get; set; }
+        public DbSet<CreditCard> CreditCards { get; set; }
+        public DbSet<CardLimit> CardLimits { get; set; }
+
 
         internal object Set<T1, T2>()
         {

@@ -52,9 +52,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IBillDal.cs" />
+    <Compile Include="Abstract\ICardLimitDal.cs" />
+    <Compile Include="Abstract\ICreditCardDal.cs" />
     <Compile Include="Abstract\ICustomerDal.cs" />
     <Compile Include="Concrete\Context\MyBankContext.cs" />
     <Compile Include="Concrete\EntityFramework\EfBillDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCardLimitDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCreditCardDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCustomerDal.cs" />
     <Compile Include="Migrations\202303302054429_Initialize.cs" />
     <Compile Include="Migrations\202303302054429_Initialize.designer.cs">
@@ -75,6 +79,14 @@
     <Compile Include="Migrations\202304081438050_BillProcess2.cs" />
     <Compile Include="Migrations\202304081438050_BillProcess2.designer.cs">
       <DependentUpon>202304081438050_BillProcess2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304081906100_InitializCreditCardEntity.cs" />
+    <Compile Include="Migrations\202304081906100_InitializCreditCardEntity.designer.cs">
+      <DependentUpon>202304081906100_InitializCreditCardEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304081934335_InitializeCardLimit.cs" />
+    <Compile Include="Migrations\202304081934335_InitializeCardLimit.designer.cs">
+      <DependentUpon>202304081934335_InitializeCardLimit.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,6 +116,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202304081438050_BillProcess2.resx">
       <DependentUpon>202304081438050_BillProcess2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304081906100_InitializCreditCardEntity.resx">
+      <DependentUpon>202304081906100_InitializCreditCardEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304081934335_InitializeCardLimit.resx">
+      <DependentUpon>202304081934335_InitializeCardLimit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

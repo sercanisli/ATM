@@ -44,5 +44,12 @@ namespace ATM
             form_PaymentTransaction.Show();
             this.Close();
         }
+
+        private void btn_WithCard_CreditCardDebtPayment_Click(object sender, EventArgs e)
+        {
+            Form_CreditCardTransaction form_CreditCardTransaction = new Form_CreditCardTransaction();
+            form_CreditCardTransaction.Show();
+            this.Close();
+        }
     }
 }

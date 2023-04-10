@@ -21,8 +21,7 @@ namespace ATM
             InitializeComponent();
             _customerService = InstanceFactory.GetInstance<ICustomerService>();
         }
-
-        private void Form_BalanceInformation_Load(object sender, EventArgs e)
+        private void LoadBalanceInformation()
         {
             var customer = _customerService.GetCustomerById(User.UserNo);
             lbl_Name.Text = customer.Name;
@@ -35,7 +34,10 @@ namespace ATM
             var account = _customerService.GetMoneyById(User.UserId);
             lbl_Money.Text = account.Money.ToString();
             lbl_DeficitMoney.Text = (3000 + account.Money).ToString();
-
+        }
+        private void Form_BalanceInformation_Load(object sender, EventArgs e)
+        {
+            LoadBalanceInformation();
         }
 
         private void btn_Back_Click(object sender, EventArgs e)

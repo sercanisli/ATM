@@ -74,6 +74,24 @@
     <Compile Include="Form_Bills.Designer.cs">
       <DependentUpon>Form_Bills.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_CreditCardApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CreditCardApplication.Designer.cs">
+      <DependentUpon>Form_CreditCardApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_CreditCardDebt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CreditCardDebt.Designer.cs">
+      <DependentUpon>Form_CreditCardDebt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_CreditCardTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CreditCardTransaction.Designer.cs">
+      <DependentUpon>Form_CreditCardTransaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Fİrst.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +174,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Bills.resx">
       <DependentUpon>Form_Bills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_CreditCardApplication.resx">
+      <DependentUpon>Form_CreditCardApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_CreditCardDebt.resx">
+      <DependentUpon>Form_CreditCardDebt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_CreditCardTransaction.resx">
+      <DependentUpon>Form_CreditCardTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Fİrst.resx">
       <DependentUpon>Form_Fİrst.cs</DependentUpon>

@@ -82,8 +82,9 @@ namespace ATM
             this.btn_WithCard_CreditCardDebtPayment.Name = "btn_WithCard_CreditCardDebtPayment";
             this.btn_WithCard_CreditCardDebtPayment.Size = new System.Drawing.Size(141, 53);
             this.btn_WithCard_CreditCardDebtPayment.TabIndex = 4;
-            this.btn_WithCard_CreditCardDebtPayment.Text = "Credit Card Debt Payment ";
+            this.btn_WithCard_CreditCardDebtPayment.Text = "Credit Card Transactions";
             this.btn_WithCard_CreditCardDebtPayment.UseVisualStyleBackColor = true;
+            this.btn_WithCard_CreditCardDebtPayment.Click += new System.EventHandler(this.btn_WithCard_CreditCardDebtPayment_Click);
             // 
             // btn_PaymentTransaction
             // 

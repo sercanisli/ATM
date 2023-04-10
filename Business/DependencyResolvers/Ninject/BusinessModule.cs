@@ -21,6 +21,12 @@ namespace Business.DependencyResolvers.Ninject
 
             Bind<IBillDal>().To<EfBillDal>().InSingletonScope();
             Bind<IBillService>().To<BillManager>().InSingletonScope();
+
+            Bind<ICardLimitDal>().To<EfCardLimitDal>().InSingletonScope();
+            Bind<ICardLimitService>().To<CardLimitManager>().InSingletonScope();
+
+            Bind<ICreditCardDal>().To<EfCreditCardDal>().InSingletonScope();
+            Bind<ICreditCardService>().To<CreditCardManager>().InSingletonScope();
         }
     }
 }

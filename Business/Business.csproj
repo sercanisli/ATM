@@ -45,8 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IBillService.cs" />
+    <Compile Include="Abstract\ICardLimitService.cs" />
+    <Compile Include="Abstract\ICreditCardService.cs" />
     <Compile Include="Abstract\ICustomerService.cs" />
     <Compile Include="Concrete\BillManager.cs" />
+    <Compile Include="Concrete\CardLimitManager.cs" />
+    <Compile Include="Concrete\CreditCardManager.cs" />
     <Compile Include="Concrete\CustomerManager.cs" />
     <Compile Include="DependencyResolvers\Ninject\BusinessModule.cs" />
     <Compile Include="DependencyResolvers\Ninject\InstanceFactory.cs" />

@@ -45,9 +45,12 @@
     <Compile Include="Abstract\Base.cs" />
     <Compile Include="Abstract\BillStatic.cs" />
     <Compile Include="Abstract\IPerson.cs" />
+    <Compile Include="Abstract\PaymentPreference.cs" />
     <Compile Include="Abstract\User.cs" />
     <Compile Include="Concrete\AccountInformation.cs" />
     <Compile Include="Concrete\Bill.cs" />
+    <Compile Include="Concrete\CardLimit.cs" />
+    <Compile Include="Concrete\CreditCard.cs" />
     <Compile Include="Concrete\Customer.cs" />
     <Compile Include="Concrete\NonCustomer.cs" />
     <Compile Include="Concrete\PayBill.cs" />
