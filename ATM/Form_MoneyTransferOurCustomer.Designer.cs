@@ -88,6 +88,11 @@ namespace ATM
             // nmUD_Money
             // 
             this.nmUD_Money.Location = new System.Drawing.Point(165, 89);
+            this.nmUD_Money.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.nmUD_Money.Name = "nmUD_Money";
             this.nmUD_Money.Size = new System.Drawing.Size(120, 20);
             this.nmUD_Money.TabIndex = 7;

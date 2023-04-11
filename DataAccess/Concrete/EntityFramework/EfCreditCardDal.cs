@@ -20,7 +20,15 @@ namespace DataAccess.Concrete.EntityFramework
                 myBankContext.SaveChanges();
             }
         }
-    
+
+        public bool CardNoIsExists(int no)
+        {
+            using (MyBankContext myBankContext = new MyBankContext())
+            {
+                return myBankContext.Set<CreditCard>().Any(c => c.CardNo == no);
+            }
+        }
+
         public CreditCard GetByCreditCardId(int customerId)
         {
 
@@ -29,6 +37,15 @@ namespace DataAccess.Concrete.EntityFramework
                 var result = myBankContext.CreditCards.Where(c => c.CustomerId == customerId).FirstOrDefault();
                 var x = result.CardLimit.Limit;
                 result.CardLimit.Limit = x;
+                return result;
+            }
+        }
+
+        public CreditCard GetCreditCardByCardNo(int cardNo)
+        {
+            using(MyBankContext myBankContext = new MyBankContext())
+            {
+                var result = myBankContext.CreditCards.Where(c => c.CardNo == cardNo).FirstOrDefault();
                 return result;
             }
         }

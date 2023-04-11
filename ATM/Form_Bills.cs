@@ -44,10 +44,19 @@ namespace ATM
 
         private void btn_Ok_Click(object sender, EventArgs e)
         {
+            decimal billPrice = 0;
+            bool result = false;
             BillStatic.BillsId = Convert.ToByte(cbx_Bills.SelectedIndex + 1);
             var bill = _billService.GetBillById(BillStatic.BillsId);
-            decimal billPrice = bill.Price;
-            var result = _billService.IsCutomerHaveBill(User.UserId, Convert.ToInt32(cbx_Bills.SelectedIndex)+1);
+            if(bill == null)
+            {
+                billPrice = 0;
+            }
+            else
+            {
+                billPrice = bill.Price;
+                result = _billService.IsCutomerHaveBill(User.UserId, Convert.ToInt32(cbx_Bills.SelectedIndex) + 1);
+            }
             if (result == true && billPrice > 0 )
             {
                 Form_PayBill payBill = new Form_PayBill();

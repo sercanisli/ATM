@@ -36,7 +36,7 @@ namespace ATM
             // 
             // btn_Without_Card
             // 
-            this.btn_Without_Card.Location = new System.Drawing.Point(12, 332);
+            this.btn_Without_Card.Location = new System.Drawing.Point(12, 93);
             this.btn_Without_Card.Name = "btn_Without_Card";
             this.btn_Without_Card.Size = new System.Drawing.Size(143, 53);
             this.btn_Without_Card.TabIndex = 0;
@@ -46,7 +46,7 @@ namespace ATM
             // 
             // btn_With_Card
             // 
-            this.btn_With_Card.Location = new System.Drawing.Point(449, 332);
+            this.btn_With_Card.Location = new System.Drawing.Point(192, 93);
             this.btn_With_Card.Name = "btn_With_Card";
             this.btn_With_Card.Size = new System.Drawing.Size(143, 53);
             this.btn_With_Card.TabIndex = 1;
@@ -56,7 +56,7 @@ namespace ATM
             // 
             // btn_AddCustomer
             // 
-            this.btn_AddCustomer.Location = new System.Drawing.Point(449, 108);
+            this.btn_AddCustomer.Location = new System.Drawing.Point(192, 12);
             this.btn_AddCustomer.Name = "btn_AddCustomer";
             this.btn_AddCustomer.Size = new System.Drawing.Size(143, 53);
             this.btn_AddCustomer.TabIndex = 2;
@@ -68,7 +68,7 @@ namespace ATM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 440);
+            this.ClientSize = new System.Drawing.Size(344, 157);
             this.Controls.Add(this.btn_AddCustomer);
             this.Controls.Add(this.btn_With_Card);
             this.Controls.Add(this.btn_Without_Card);

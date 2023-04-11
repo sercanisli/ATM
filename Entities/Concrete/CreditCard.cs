@@ -16,7 +16,6 @@ namespace Entities.Concrete
         public byte CardLimitId { get; set; }
 
 
-
         [ForeignKey("CustomerId")]
         public virtual Customer Customer { get; set; }
 

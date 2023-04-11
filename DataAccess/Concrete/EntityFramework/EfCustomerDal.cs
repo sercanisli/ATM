@@ -31,6 +31,23 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
+        public void CreateAccount(AccountInformation accountInformation)
+        {
+            using (MyBankContext myBankContext = new MyBankContext())
+            {
+                myBankContext.AccountInformations.Add(accountInformation);
+                myBankContext.SaveChanges();
+            }
+        }
+
+        public bool CustomerNoIsExists(int no)
+        {
+            using(MyBankContext myBankContext = new MyBankContext())
+            {
+                return myBankContext.Set<Customer>().Any(c => c.CustomerNo == no);
+            }
+        }
+
         public void DrawMoney(AccountInformation accountInformation, int id)
         {
             using (MyBankContext myBankContext = new MyBankContext())

@@ -9,6 +9,7 @@ namespace DataAccess.Abstract
 {
     public interface ICustomerDal
     {
+        bool CustomerNoIsExists(int no);
         void Add(Customer customer);
         bool GetCustomer(int customerNo, string customerPassword);
         void AddMoneyProcess(AccountInformation accountInformation);
@@ -18,5 +19,7 @@ namespace DataAccess.Abstract
         AccountInformation GetMoneyById(int id);
         void DrawMoney(AccountInformation accountInformation, int id);
         void TransferMoney(AccountInformation accountInformation, int CustomerNo, int id);
+        void CreateAccount(AccountInformation accountInformation);
+
     }
 }

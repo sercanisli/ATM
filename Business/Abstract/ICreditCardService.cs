@@ -12,6 +12,8 @@ namespace Business.Abstract
         void ApplyCreditCard(CreditCard creditCard);
         CreditCard GetByCreditCardId(int customerId);
         void PayCreditCardDebt(AccountInformation accountInformation, int id, byte paymentPrefence, decimal debt);
+        //void PayCreditCardNonCustomer(AccountInformation accountInformation, int cardNo);
         CreditCard LoadDebt(CreditCard creditCard, int id, byte paymentPreference, decimal debt);
+        CreditCard GetCreditCardByCardNo(int cardNo);
     }
 }

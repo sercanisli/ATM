@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Abstract\Base.cs" />
     <Compile Include="Abstract\BillStatic.cs" />
+    <Compile Include="Abstract\Card.cs" />
     <Compile Include="Abstract\IPerson.cs" />
     <Compile Include="Abstract\PaymentPreference.cs" />
     <Compile Include="Abstract\User.cs" />

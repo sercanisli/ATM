@@ -20,14 +20,30 @@ namespace Business.Concrete
         {
             Random randomCustomerwNo = new Random();
             int no = randomCustomerwNo.Next(1000000, 9999999);
-            creditCard.CardNo = no;
-
-            _creditCardDal.ApplyCreditCard(creditCard);
+            if(CardNoIsExists(no)==false)
+            {
+                creditCard.CardNo = no;
+                _creditCardDal.ApplyCreditCard(creditCard);
+            }
+            else
+            {
+                no = randomCustomerwNo.Next(1000000, 9999999);
+            }
+           
+        }
+        public bool CardNoIsExists(int no)
+        {
+            return _creditCardDal.CardNoIsExists(no);
         }
 
         public CreditCard GetByCreditCardId(int customerId)
         {
             return _creditCardDal.GetByCreditCardId(customerId);
+        }
+
+        public CreditCard GetCreditCardByCardNo(int cardNo)
+        {
+            return _creditCardDal.GetCreditCardByCardNo(cardNo);
         }
 
         public CreditCard LoadDebt(CreditCard creditCard, int id, byte paymentPreference, decimal debt)

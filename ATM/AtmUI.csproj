@@ -122,6 +122,18 @@
     <Compile Include="Form_MoneyTransferOurCustomer.Designer.cs">
       <DependentUpon>Form_MoneyTransferOurCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_NonCustomerCreditCardProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_NonCustomerCreditCardProcess.Designer.cs">
+      <DependentUpon>Form_NonCustomerCreditCardProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_NonCustomerMoneyTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_NonCustomerMoneyTransfer.Designer.cs">
+      <DependentUpon>Form_NonCustomerMoneyTransfer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_NotOurCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +145,12 @@
     </Compile>
     <Compile Include="Form_PayBill.Designer.cs">
       <DependentUpon>Form_PayBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_PayCreditCardNonCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_PayCreditCardNonCustomer.Designer.cs">
+      <DependentUpon>Form_PayCreditCardNonCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_PaymentTransaction.cs">
       <SubType>Form</SubType>
@@ -152,11 +170,11 @@
     <Compile Include="Form_WithdrawMoney.Designer.cs">
       <DependentUpon>Form_WithdrawMoney.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Without_Card.cs">
+    <Compile Include="Form_WithoutCard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Without_Card.Designer.cs">
-      <DependentUpon>Form_Without_Card.cs</DependentUpon>
+    <Compile Include="Form_WithoutCard.Designer.cs">
+      <DependentUpon>Form_WithoutCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_With_Card.cs">
       <SubType>Form</SubType>
@@ -199,11 +217,20 @@
     <EmbeddedResource Include="Form_MoneyTransferOurCustomer.resx">
       <DependentUpon>Form_MoneyTransferOurCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_NonCustomerCreditCardProcess.resx">
+      <DependentUpon>Form_NonCustomerCreditCardProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_NonCustomerMoneyTransfer.resx">
+      <DependentUpon>Form_NonCustomerMoneyTransfer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_NotOurCustomer.resx">
       <DependentUpon>Form_NotOurCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_PayBill.resx">
       <DependentUpon>Form_PayBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_PayCreditCardNonCustomer.resx">
+      <DependentUpon>Form_PayCreditCardNonCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_PaymentTransaction.resx">
       <DependentUpon>Form_PaymentTransaction.cs</DependentUpon>
@@ -214,8 +241,8 @@
     <EmbeddedResource Include="Form_WithdrawMoney.resx">
       <DependentUpon>Form_WithdrawMoney.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Without_Card.resx">
-      <DependentUpon>Form_Without_Card.cs</DependentUpon>
+    <EmbeddedResource Include="Form_WithoutCard.resx">
+      <DependentUpon>Form_WithoutCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_With_Card.resx">
       <DependentUpon>Form_With_Card.cs</DependentUpon>

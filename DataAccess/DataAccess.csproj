@@ -55,38 +55,16 @@
     <Compile Include="Abstract\ICardLimitDal.cs" />
     <Compile Include="Abstract\ICreditCardDal.cs" />
     <Compile Include="Abstract\ICustomerDal.cs" />
+    <Compile Include="Abstract\INonCustomerDal.cs" />
     <Compile Include="Concrete\Context\MyBankContext.cs" />
     <Compile Include="Concrete\EntityFramework\EfBillDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCardLimitDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCreditCardDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCustomerDal.cs" />
-    <Compile Include="Migrations\202303302054429_Initialize.cs" />
-    <Compile Include="Migrations\202303302054429_Initialize.designer.cs">
-      <DependentUpon>202303302054429_Initialize.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202303302141073_Mig.cs" />
-    <Compile Include="Migrations\202303302141073_Mig.designer.cs">
-      <DependentUpon>202303302141073_Mig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202303310926017_DatetimeProcess.cs" />
-    <Compile Include="Migrations\202303310926017_DatetimeProcess.designer.cs">
-      <DependentUpon>202303310926017_DatetimeProcess.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202304071550136_BillProcess.cs" />
-    <Compile Include="Migrations\202304071550136_BillProcess.designer.cs">
-      <DependentUpon>202304071550136_BillProcess.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202304081438050_BillProcess2.cs" />
-    <Compile Include="Migrations\202304081438050_BillProcess2.designer.cs">
-      <DependentUpon>202304081438050_BillProcess2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202304081906100_InitializCreditCardEntity.cs" />
-    <Compile Include="Migrations\202304081906100_InitializCreditCardEntity.designer.cs">
-      <DependentUpon>202304081906100_InitializCreditCardEntity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202304081934335_InitializeCardLimit.cs" />
-    <Compile Include="Migrations\202304081934335_InitializeCardLimit.designer.cs">
-      <DependentUpon>202304081934335_InitializeCardLimit.cs</DependentUpon>
+    <Compile Include="Concrete\EntityFramework\EfNonCustomerDal.cs" />
+    <Compile Include="Migrations\202304111405164_CreateInitialize.cs" />
+    <Compile Include="Migrations\202304111405164_CreateInitialize.designer.cs">
+      <DependentUpon>202304111405164_CreateInitialize.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,26 +80,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202303302054429_Initialize.resx">
-      <DependentUpon>202303302054429_Initialize.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202303302141073_Mig.resx">
-      <DependentUpon>202303302141073_Mig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202303310926017_DatetimeProcess.resx">
-      <DependentUpon>202303310926017_DatetimeProcess.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202304071550136_BillProcess.resx">
-      <DependentUpon>202304071550136_BillProcess.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202304081438050_BillProcess2.resx">
-      <DependentUpon>202304081438050_BillProcess2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202304081906100_InitializCreditCardEntity.resx">
-      <DependentUpon>202304081906100_InitializCreditCardEntity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202304081934335_InitializeCardLimit.resx">
-      <DependentUpon>202304081934335_InitializeCardLimit.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202304111405164_CreateInitialize.resx">
+      <DependentUpon>202304111405164_CreateInitialize.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

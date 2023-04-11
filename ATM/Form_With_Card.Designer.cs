@@ -31,10 +31,10 @@ namespace ATM
         {
             this.btn_WithCard_WithdrawMoney = new System.Windows.Forms.Button();
             this.btn_WithCard_MoneyTransfers = new System.Windows.Forms.Button();
-            this.btn_WithCard_ApplicationProcedures = new System.Windows.Forms.Button();
             this.btn_BalanceInformaion = new System.Windows.Forms.Button();
             this.btn_WithCard_CreditCardDebtPayment = new System.Windows.Forms.Button();
             this.btn_PaymentTransaction = new System.Windows.Forms.Button();
+            this.btn_Back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_WithCard_WithdrawMoney
@@ -56,15 +56,6 @@ namespace ATM
             this.btn_WithCard_MoneyTransfers.Text = "Money Transfers";
             this.btn_WithCard_MoneyTransfers.UseVisualStyleBackColor = true;
             this.btn_WithCard_MoneyTransfers.Click += new System.EventHandler(this.btn_WithCard_MoneyTransfers_Click);
-            // 
-            // btn_WithCard_ApplicationProcedures
-            // 
-            this.btn_WithCard_ApplicationProcedures.Location = new System.Drawing.Point(12, 259);
-            this.btn_WithCard_ApplicationProcedures.Name = "btn_WithCard_ApplicationProcedures";
-            this.btn_WithCard_ApplicationProcedures.Size = new System.Drawing.Size(141, 53);
-            this.btn_WithCard_ApplicationProcedures.TabIndex = 2;
-            this.btn_WithCard_ApplicationProcedures.Text = "Application Procedures";
-            this.btn_WithCard_ApplicationProcedures.UseVisualStyleBackColor = true;
             // 
             // btn_BalanceInformaion
             // 
@@ -96,15 +87,25 @@ namespace ATM
             this.btn_PaymentTransaction.UseVisualStyleBackColor = true;
             this.btn_PaymentTransaction.Click += new System.EventHandler(this.btn_PaymentTransaction_Click);
             // 
+            // btn_Back
+            // 
+            this.btn_Back.Location = new System.Drawing.Point(12, 257);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(141, 53);
+            this.btn_Back.TabIndex = 6;
+            this.btn_Back.Text = "Back";
+            this.btn_Back.UseVisualStyleBackColor = true;
+            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
+            // 
             // Form_With_Card
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 342);
+            this.ClientSize = new System.Drawing.Size(677, 322);
+            this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.btn_PaymentTransaction);
             this.Controls.Add(this.btn_WithCard_CreditCardDebtPayment);
             this.Controls.Add(this.btn_BalanceInformaion);
-            this.Controls.Add(this.btn_WithCard_ApplicationProcedures);
             this.Controls.Add(this.btn_WithCard_MoneyTransfers);
             this.Controls.Add(this.btn_WithCard_WithdrawMoney);
             this.Name = "Form_With_Card";
@@ -117,9 +118,9 @@ namespace ATM
 
         private System.Windows.Forms.Button btn_WithCard_WithdrawMoney;
         private System.Windows.Forms.Button btn_WithCard_MoneyTransfers;
-        private System.Windows.Forms.Button btn_WithCard_ApplicationProcedures;
         private System.Windows.Forms.Button btn_BalanceInformaion;
         private System.Windows.Forms.Button btn_WithCard_CreditCardDebtPayment;
         private System.Windows.Forms.Button btn_PaymentTransaction;
+        private System.Windows.Forms.Button btn_Back;
     }
 }

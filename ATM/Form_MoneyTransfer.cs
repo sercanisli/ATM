@@ -37,5 +37,10 @@ namespace ATM
             with_Card.Show();
             this.Close();
         }
+
+        private void Form_MoneyTransfer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

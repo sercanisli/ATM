@@ -61,7 +61,7 @@ namespace ATM
             this.tbx_CustomerNo.Name = "tbx_CustomerNo";
             this.tbx_CustomerNo.Size = new System.Drawing.Size(138, 20);
             this.tbx_CustomerNo.TabIndex = 2;
-            this.tbx_CustomerNo.Text = "77391";
+            this.tbx_CustomerNo.Text = "37986";
             // 
             // lbl_CustomerPassword
             // 
@@ -78,7 +78,7 @@ namespace ATM
             this.tbx_CustomerPassword.Name = "tbx_CustomerPassword";
             this.tbx_CustomerPassword.Size = new System.Drawing.Size(138, 20);
             this.tbx_CustomerPassword.TabIndex = 4;
-            this.tbx_CustomerPassword.Text = "asd123";
+            this.tbx_CustomerPassword.Text = "seres0902";
             // 
             // Form_IdentityProcess
             // 

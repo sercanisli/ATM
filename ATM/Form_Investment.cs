@@ -25,8 +25,16 @@ namespace ATM
         }
         private void LoadMoney()
         {
-            var money = _customerService.GetMoneyById(User.UserId);
-            lbl_Money.Text = money.Money.ToString();
+            
+            var account = _customerService.GetMoneyById(User.UserId);
+            if(account==null)
+            {
+                lbl_Money.Text = "0";
+            }
+            else
+            {
+                lbl_Money.Text = account.Money.ToString();
+            }
         }
         private void btn_Investment_Click(object sender, EventArgs e)
         {

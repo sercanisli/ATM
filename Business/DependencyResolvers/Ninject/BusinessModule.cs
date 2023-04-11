@@ -27,6 +27,9 @@ namespace Business.DependencyResolvers.Ninject
 
             Bind<ICreditCardDal>().To<EfCreditCardDal>().InSingletonScope();
             Bind<ICreditCardService>().To<CreditCardManager>().InSingletonScope();
+
+            Bind<INonCustomerDal>().To<EfNonCustomerDal>().InSingletonScope();
+            Bind<INonCustomerService>().To<NonCustomerManager>().InSingletonScope();
         }
     }
 }

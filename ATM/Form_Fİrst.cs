@@ -19,14 +19,13 @@ namespace ATM
         }
         private void Form_First_Load(object sender, EventArgs e)
         {
-            //BankContext bankContext =new BankContext();
-            //bankContext.Database.Create();
+           
         }
 
         private void btn_Without_Card_Click(object sender, EventArgs e)
         {
-            Form_Without_Card formWithoutCard = new Form_Without_Card();
-            formWithoutCard.Show();
+            Form_WithoutCard withoutCard = new Form_WithoutCard();
+            withoutCard.Show();
 
         }
 

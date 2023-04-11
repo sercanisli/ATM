@@ -48,7 +48,7 @@ namespace ATM
                     BirthDay = dtp_DateOfBirth.Value,
                     CreatedDate = DateTime.Now.ToShortDateString()
                 });
-                MessageBox.Show("Succesful");
+                MessageBox.Show("Customer created");
             }
             else
             {

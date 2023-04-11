@@ -74,6 +74,7 @@ namespace ATM
             this.Controls.Add(this.btn_OurCustomer);
             this.Name = "Form_MoneyTransfer";
             this.Text = "Form_MoneyTransfer";
+            this.Load += new System.EventHandler(this.Form_MoneyTransfer_Load);
             this.ResumeLayout(false);
 
         }

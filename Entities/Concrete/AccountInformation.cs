@@ -16,7 +16,6 @@ namespace Entities.Concrete
 
 
 
-
         [ForeignKey("CustomerId")]
         public virtual Customer Customer { get; set; }
     }

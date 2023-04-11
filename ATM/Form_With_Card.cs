@@ -51,5 +51,10 @@ namespace ATM
             form_CreditCardTransaction.Show();
             this.Close();
         }
+
+        private void btn_Back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

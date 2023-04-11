@@ -21,15 +21,29 @@ namespace Business.Concrete
         {
             Random randomCustomerwNo = new Random();
             int no = randomCustomerwNo.Next(10000,99999);
-            customer.CustomerNo = no;
-
-
-            _customerDal.Add(customer);
+            if(CustomerNoIsExists(no)==false)
+            {
+                customer.CustomerNo = no;
+                _customerDal.Add(customer);
+            }
+            else
+            {
+                no = randomCustomerwNo.Next(10000, 99999);
+            }
         }
 
         public void AddMoneyProcess(AccountInformation accountInformation)
         {
             _customerDal.AddMoneyProcess(accountInformation);
+        }
+
+        public void CreateAccount(AccountInformation accountInformation)
+        {
+            _customerDal.CreateAccount(accountInformation);
+        }
+        public bool CustomerNoIsExists(int no)
+        {
+            return _customerDal.CustomerNoIsExists(no);
         }
 
         public void DrawMoney(AccountInformation accountInformation, int id)

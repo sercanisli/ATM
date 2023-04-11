@@ -9,10 +9,11 @@ namespace Entities.Concrete
 {
     public class NonCustomer : Base<int>, IPerson
     {
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Surname { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string PhoneNo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string PhoneNo { get; set; }
         public string IdentityNo { get; set; }
+        public decimal Amount { get; set; }
 
     }
 }
