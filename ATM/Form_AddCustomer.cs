@@ -30,29 +30,46 @@ namespace ATM
             string[] gender = Enum.GetNames(typeof(Gender));
             cbx_Gender.Items.AddRange(gender);
         }
+        public void Clear()
+        {
+            tbx_Name.Clear();
+            tbx_Surname.Clear();
+            tbx_PhoneNo.Clear();
+            tbx_Email.Clear();
+            tbx_Password.Clear();
+            tbx_PasswordAgain.Clear();
+            dtp_DateOfBirth.Value = DateTime.Now;
+        }
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-
-            if (tbx_Password.Text==tbx_PasswordAgain.Text)
+            try
             {
-
-                _customerService.Add(new Customer
+                if (tbx_Password.Text == tbx_PasswordAgain.Text)
                 {
-                    Name = tbx_Name.Text,
-                    Surname = tbx_Surname.Text,
-                    PhoneNo = tbx_PhoneNo.Text,
-                    Email = tbx_Email.Text,
-                    Password = tbx_Password.Text,
-                    Gender = (Gender)cbx_Gender.SelectedIndex,
-                    BirthDay = dtp_DateOfBirth.Value,
-                    CreatedDate = DateTime.Now.ToShortDateString()
-                });
-                MessageBox.Show("Customer created");
+
+                    _customerService.Add(new Customer
+                    {
+                        Name = tbx_Name.Text,
+                        Surname = tbx_Surname.Text,
+                        PhoneNo = tbx_PhoneNo.Text,
+                        Email = tbx_Email.Text,
+                        Password = tbx_Password.Text,
+                        Gender = (Gender)cbx_Gender.SelectedIndex,
+                        BirthDay = dtp_DateOfBirth.Value,
+                        CreatedDate = DateTime.Now.ToShortDateString()
+                    });
+                    MessageBox.Show("Customer created");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Şifre eşleşmedi");
+                }
             }
-            else
+            catch(Exception exception)
             {
-                MessageBox.Show("Şifre eşleşmedi");
+                MessageBox.Show(exception.Message);
             }
         }
 

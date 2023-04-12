@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Business.Utilities;
+using Business.ValidationRules.FluentValidation;
+using Business.HashProcess;
+using FluentValidation.Results;
+using FluentValidation;
 
 namespace Business.Concrete
 {
@@ -19,6 +24,14 @@ namespace Business.Concrete
         }
         public void Add(Customer customer)
         {
+            customer.Password=Hash.getHashMD5(customer.Password);
+            CustomerValidator customerValidator = new CustomerValidator();
+            ValidationResult result = customerValidator.Validate(customer);
+            foreach(var item in result.Errors)
+            {
+                throw new ValidationException(result.Errors);
+            }
+
             Random randomCustomerwNo = new Random();
             int no = randomCustomerwNo.Next(10000,99999);
             if(CustomerNoIsExists(no)==false)
@@ -34,6 +47,7 @@ namespace Business.Concrete
 
         public void AddMoneyProcess(AccountInformation accountInformation)
         {
+
             _customerDal.AddMoneyProcess(accountInformation);
         }
 
@@ -53,7 +67,9 @@ namespace Business.Concrete
 
         public bool GetCustomer(int customerNo, string customerPassword)
         {
-            var result=_customerDal.GetCustomer(customerNo, customerPassword);
+            customerPassword = Hash.getHashMD5(customerPassword);
+
+            var result =_customerDal.GetCustomer(customerNo, customerPassword);
             return result;
         }
 
