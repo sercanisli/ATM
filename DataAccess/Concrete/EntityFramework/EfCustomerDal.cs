@@ -52,20 +52,27 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (MyBankContext myBankContext = new MyBankContext())
             {
-
                 var result = myBankContext.AccountInformations.Where(a => a.CustomerId == id).First();
-                result.Money =result.Money-accountInformation.Money;
+                result.Money = accountInformation.Money;
                 myBankContext.Entry(result).State = EntityState.Modified;
                 myBankContext.SaveChanges();
             }
         }
 
-        public bool GetCustomer(int customerNo, string customerPassword)
+        public AccountInformation GetAccountByCustomerNo(int customerNo)
+        {
+            using(MyBankContext myBankContext = new MyBankContext())
+            {
+                return myBankContext.AccountInformations.Where(a => a.CustomerNo == customerNo).FirstOrDefault();
+            }
+        }
+
+        public bool GetCustomer(Customer customer)
         {
             using (MyBankContext myBankContext = new MyBankContext())
             {
                 var result = myBankContext.Set<Customer>()
-                    .Any(c => c.CustomerNo == customerNo && c.Password == customerPassword);
+                    .Any(c => c.CustomerNo == customer.CustomerNo && c.Password == customer.Password);
                 return result;
             }
         }
@@ -97,16 +104,14 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public void TransferMoney(AccountInformation accountInformation, int CustomerNo, int id)
+        public void TransferMoney(AccountInformation accountInformation, int CustomerNo, int id, decimal money)
         {
             using (MyBankContext myBankContext = new MyBankContext())
             {
                 var result = myBankContext.AccountInformations.Where(a => a.CustomerNo == CustomerNo).FirstOrDefault();
                 var user = myBankContext.AccountInformations.Where(a => a.CustomerId == id).FirstOrDefault();
-
-                result.Money = result.Money + accountInformation.Money;
-                user.Money = user.Money - accountInformation.Money;
-
+                result.Money = money;
+                user.Money = accountInformation.Money;
                 myBankContext.Entry(result).State = EntityState.Modified;
                 myBankContext.SaveChanges();
             }
@@ -117,7 +122,7 @@ namespace DataAccess.Concrete.EntityFramework
             using (MyBankContext myBankContext = new MyBankContext())
             {
                 var result = myBankContext.AccountInformations.Where(a=>a.CustomerId == customerId).First();
-                result.Money = accountInformation.Money + result.Money;
+                result.Money = accountInformation.Money;
                 myBankContext.Entry(result).State = EntityState.Modified;
                 myBankContext.SaveChanges();
             }

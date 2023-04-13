@@ -39,7 +39,8 @@ namespace ATM
         {
             _customerService.DrawMoney(new AccountInformation
             {
-                Money = Convert.ToDecimal(nmUD_Amount.Text)
+                Money = Convert.ToDecimal(nmUD_Amount.Text),
+                CustomerNo=User.UserNo
             }, User.UserId);
 
             LoadMoney();

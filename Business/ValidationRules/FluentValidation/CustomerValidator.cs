@@ -20,11 +20,11 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(c => c.Password).NotEmpty().WithMessage("Password is not empty")
                 .Must(IsPasswordValid).WithMessage("Password must contain at least one number and at least one letter");
 
-            //RuleFor(c => c.BirthDay).NotEmpty().WithMessage("Birthday is not empty")
-            //    .GreaterThan(DateTime.Now.AddYears(-18)).WithMessage("You must be over 18 years old");
+            RuleFor(c => c.BirthDay).NotEmpty().WithMessage("Birthday is not empty")
+                .GreaterThan(DateTime.Now.AddYears(-18)).WithMessage("You must be over 18 years old");
 
-            //RuleFor(c => c.Gender).NotEmpty().WithMessage("Gender is not empty")
-            //    .IsInEnum().WithMessage("Invalid gender selection");
+            RuleFor(c => c.Gender).NotEmpty().WithMessage("Gender is not empty")
+                .IsInEnum().WithMessage("Invalid gender selection");
 
             RuleFor(c => c.Name).NotEmpty().WithMessage("Name is not empty")
                 .MaximumLength(25).WithMessage("Name cannot be longer than 25 characters")

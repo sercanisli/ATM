@@ -92,6 +92,7 @@ namespace ATM
             this.Controls.Add(this.btn_GoWithCards);
             this.Name = "Form_IdentityProcess";
             this.Text = "Form_IdentityProcess";
+            this.Load += new System.EventHandler(this.Form_IdentityProcess_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

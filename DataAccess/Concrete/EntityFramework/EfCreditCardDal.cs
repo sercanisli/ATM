@@ -35,8 +35,11 @@ namespace DataAccess.Concrete.EntityFramework
             using (MyBankContext myBankContext = new MyBankContext())
             {
                 var result = myBankContext.CreditCards.Where(c => c.CustomerId == customerId).FirstOrDefault();
+
+                //*** this process in order to avoid for lazy load
                 var x = result.CardLimit.Limit;
                 result.CardLimit.Limit = x;
+                //***********
                 return result;
             }
         }

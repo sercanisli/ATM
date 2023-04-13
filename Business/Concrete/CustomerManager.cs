@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
-using Business.Utilities;
 using Business.ValidationRules.FluentValidation;
 using Business.HashProcess;
 using FluentValidation.Results;
@@ -62,14 +61,31 @@ namespace Business.Concrete
 
         public void DrawMoney(AccountInformation accountInformation, int id)
         {
+            var result = GetMoneyById(id);
+            decimal money = result.Money;
+            money = money - accountInformation.Money;
+            accountInformation.Money = money;
             _customerDal.DrawMoney(accountInformation, id);
+        }
+
+        public AccountInformation GetAccountByCustomerNo(int customerNo)
+        {
+            return _customerDal.GetAccountByCustomerNo(customerNo);
         }
 
         public bool GetCustomer(int customerNo, string customerPassword)
         {
+            IdentityValidator customerValidator = new IdentityValidator();
+
             customerPassword = Hash.getHashMD5(customerPassword);
 
-            var result =_customerDal.GetCustomer(customerNo, customerPassword);
+            Customer customer = new Customer()
+            {
+                CustomerNo=customerNo,
+                Password=customerPassword
+            };
+            ValidationResult validationResult = customerValidator.Validate(customer);
+            var result =_customerDal.GetCustomer(customer);
             return result;
         }
 
@@ -89,12 +105,24 @@ namespace Business.Concrete
             return _customerDal.IsExistsForMoneyProcess(customerId);
         }
 
-        public void TransferMoney(AccountInformation accountInformation, int CustomerNo, int id)
+        public void TransferMoney(AccountInformation accountInformation, int customerNo, int id)
         {
-            _customerDal.TransferMoney(accountInformation, CustomerNo, id);
+            decimal money = 0;
+            var result = GetMoneyById(id);
+            var account = GetAccountByCustomerNo(customerNo);
+            account.Money = account.Money + accountInformation.Money;
+            result.Money = result.Money - accountInformation.Money;
+
+            money = account.Money;
+            accountInformation.Money = result.Money;
+            _customerDal.TransferMoney(accountInformation, customerNo, id, money);
         }
         public void UpdateMoneyProcess(AccountInformation accountInformation, int customerId)
         {
+            var result = GetMoneyById(customerId);
+            decimal money = result.Money;
+            money = money + accountInformation.Money;
+            accountInformation.Money = money;
             _customerDal.UpdateMoneyProcess(accountInformation,customerId);
         }
     }

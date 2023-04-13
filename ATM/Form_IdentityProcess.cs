@@ -28,24 +28,34 @@ namespace ATM
 
         private void btn_GoWithCards_Click(object sender, EventArgs e)
         {
-            User.UserNo = Convert.ToInt32(tbx_CustomerNo.Text);
-            var result =_customerService.GetCustomer(User.UserNo, tbx_CustomerPassword.Text);
-            var customer=_customerService.GetCustomerById(User.UserNo);
-
-            if (result==true)
+            try
             {
-                this.Close();
-                Form_With_Card formWithCard = new Form_With_Card();
-                formWithCard.Show();
-                User.UserId = customer.Id;
-                User.Name = customer.Name;
+                User.UserNo = Convert.ToInt32(tbx_CustomerNo.Text);
+                var result = _customerService.GetCustomer(User.UserNo, tbx_CustomerPassword.Text);
+                var customer = _customerService.GetCustomerById(User.UserNo);
+
+                if (result == true)
+                {
+                    this.Close();
+                    Form_With_Card formWithCard = new Form_With_Card();
+                    formWithCard.Show();
+                    User.UserId = customer.Id;
+                    User.Name = customer.Name;
+                }
+                else
+                {
+                    MessageBox.Show("Customer Number or Customer Password is incorrect");
+                }
             }
-            else
+            catch(Exception exception)
             {
-                MessageBox.Show("Customer Number or Customer Password is incorrect");
+                MessageBox.Show(exception.Message);
             }
+        }
 
-
+        private void Form_IdentityProcess_Load(object sender, EventArgs e)
+        {
+            tbx_CustomerPassword.PasswordChar ='*';
         }
     }
 }
