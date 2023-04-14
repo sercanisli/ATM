@@ -4,6 +4,8 @@ The project was developed using .NET EntityFramework 6.4.4. , project has been d
 
 
 Database Diagrams;
+
+
 ![AtmDb](https://user-images.githubusercontent.com/128610192/231908931-e634e34f-f8b6-4af4-b22c-a9ca50edf1be.JPG)
 
 
