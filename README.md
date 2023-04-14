@@ -11,7 +11,10 @@ Database Diagrams;
 
 
 The screen that welcomes you when the application runs ;
+
 ![WelcomeScreen](https://user-images.githubusercontent.com/128610192/231907132-41d8d1d2-63f8-4239-93c7-4a8fc9e38f43.JPG)
+
+
 
 When we click on the I want to be I want to be customer button, We add information requested from us. 
 Validation (Fluent Validation) and hashing (MD5) takes place for this informations;
